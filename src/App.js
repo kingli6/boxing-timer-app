@@ -1,20 +1,22 @@
 import './App.css';
 
 import TimerComp from './TimerComp';
+import CountdownTimer from './components/displaybar/CountdownTimer';
 
 function App() {
   return (
     <>
       <div className="App">
+        {/* --------------------------- */}
         <header className="App-header">
           {/* .............ff happy hacking ff............... */}
-
+          <CountdownTimer />
           <TimerComp />
 
           {/* .............bottom............... */}
 
           <p>
-            Boxing timer <code>choose intervals in secods</code>
+            Boxing timer <code>choose intervals in seconds</code>
           </p>
 
           <p>
@@ -23,8 +25,14 @@ function App() {
               <ul className="bullet-points">
                 <li>quick ducks</li>
                 <li>switch feet while sharp attacks</li>
-                <li>warm up and train short bursts a few times</li>
+                <li>
+                  warm up and train short bursts a few times or Sprinter
+                  training. <br />
+                  Low intencity, few rounds to reach 40 ish minute, and <br />
+                  harder workout during evenings? strength
+                </li>
                 <li>focus on few things and repeat till sharpness</li>
+                <li>Kneel and box</li>
               </ul>
             </i>
           </p>
