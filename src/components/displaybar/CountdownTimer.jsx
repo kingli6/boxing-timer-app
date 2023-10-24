@@ -14,13 +14,13 @@ const CountdownTimer = ({ CountdownTimestampMs }) => {
   // Use useEffect to update the remaining time at regular intervals
   useEffect(() => {
     const intervalID = setInterval(() => {
-      updateRemainingTime();
+      updateRemainingTime(CountdownTimestampMs);
     }, 1000); // Update every 1000 milli second (1 sec)
     return () => clearInterval(intervalID); // Cleanup when the component unmounts
-  }, []);
+  }, [CountdownTimestampMs]);
 
   // Function to update the remaining time
-  function updateRemainingTime() {
+  function updateRemainingTime(countdown) {
     // Calculate the remaining time here and update the state
     // For example, you can set a future date and calculate the time difference
     // console.log('Hello!!');
