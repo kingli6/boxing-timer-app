@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './CountdownTimer.css';
-
+import { getRemainingTimeUntilMsTimestamp } from './Utils/CountdownTimerUtils.jsx';
 const defaultRemaingTime = {
   seconds: '00',
   minutes: '00',
@@ -24,6 +24,7 @@ const CountdownTimer = ({ CountdownTimestampMs }) => {
     // Calculate the remaining time here and update the state
     // For example, you can set a future date and calculate the time difference
     // console.log('Hello!!');
+    setRemainingTime(getRemainingTimeUntilMsTimestamp(countdown));
   }
   //   -------------------------------------------------------------
   return (
