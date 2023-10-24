@@ -10,8 +10,8 @@ function App() {
         {/* --------------------------- */}
         <header className="App-header">
           {/* .............ff happy hacking ff............... */}
-          <CountdownTimer CountdownTimestampMs={12060000000000} />
-          {/* i don't understand this 1643673600000 "it's a time stamp in 2022"*/}
+          <CountdownTimer CountdownTimestampMs={1698186888466 + 1200000} />
+          {/* current time (timestamp in millisecond)*/}
           <TimerComp />
 
           {/* .............bottom............... */}
