@@ -8,7 +8,7 @@ const defaultRemaingTime = {
   days: '00',
 };
 
-const CountdownTimer = () => {
+const CountdownTimer = ({ CountdownTimestampMs }) => {
   const [remainingTime, setRemainingTime] = useState(defaultRemaingTime);
 
   // Use useEffect to update the remaining time at regular intervals
