@@ -10,7 +10,7 @@ function App() {
         {/* --------------------------- */}
         <header className="App-header">
           {/* .............ff happy hacking ff............... */}
-          <CountdownTimer CountdownTimestampMs={1643673600000} />
+          <CountdownTimer CountdownTimestampMs={12060000000000} />
           {/* i don't understand this 1643673600000 "it's a time stamp in 2022"*/}
           <TimerComp />
 
