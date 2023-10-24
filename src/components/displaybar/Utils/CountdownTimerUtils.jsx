@@ -1,10 +1,35 @@
 import dayjs from 'dayjs';
 
 export function getRemainingTimeUntilMsTimestamp(timestampMs) {
+  const timestampDayjs = dayjs(timestampMs);
+  const nowDayjs = dayjs();
   return {
-    seconds: '12',
-    minutes: '15',
-    hours: '12',
-    days: '31',
+    seconds: getRemainingSeconds(nowDayjs, timestampDayjs),
+    minutes: getRemainingMinutes(nowDayjs, timestampDayjs),
+    hours: getRemainingHours(nowDayjs, timestampDayjs),
+    days: getRemainingDays(nowDayjs, timestampDayjs),
   };
+}
+
+function getRemainingSeconds(nowDayjs, timestampDayjs) {
+  const seconds = timestampDayjs.diff(nowDayjs, 'seconds') % 60;
+  return seconds;
+}
+function getRemainingMinutes(nowDayjs, timestampDayjs) {
+  const minutes = timestampDayjs.diff(nowDayjs, 'minutes') % 60;
+  return minutes;
+}
+function getRemainingHours(nowDayjs, timestampDayjs) {
+  const hours = timestampDayjs.diff(nowDayjs, 'hours') % 24;
+  return hours;
+}
+function getRemainingDays(nowDayjs, timestampDayjs) {
+  const days = timestampDayjs.diff(nowDayjs, 'days');
+  return days;
+}
+
+function padWithZeros(number, minLength) {
+  const numberString = number.toString();
+  if (numberString.length >= minLength) return numberString;
+  return '0'.repeat(minLength - numberString.length) + numberString;
 }
