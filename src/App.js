@@ -12,11 +12,11 @@ function App() {
           {/* .............ff happy hacking ff............... */}
           <CountdownTimer CountdownTimestampMs={1698186888466 + 1200000} />
           {/* current time (timestamp in millisecond)*/}
-          <TimerComp />
 
           {/* .............bottom............... */}
+          {/* <TimerComp /> */}
 
-          <p>
+          {/* <p>
             Boxing timer <code>choose intervals in seconds</code>
           </p>
 
@@ -53,7 +53,7 @@ function App() {
             rel="noopener noreferrer"
           >
             Notes Code journal NOTION
-          </a>
+          </a> */}
         </header>
       </div>
     </>
