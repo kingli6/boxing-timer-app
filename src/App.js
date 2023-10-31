@@ -1,6 +1,6 @@
 import './App.css';
 
-import TimerComp from './TimerComp';
+// import TimerComp from './TimerComp';
 import CountdownTimer from './components/displaybar/CountdownTimer';
 
 function App() {
