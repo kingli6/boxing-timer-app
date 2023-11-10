@@ -1,16 +1,43 @@
+import { useState } from 'react';
 import './App.css';
 
 // import TimerComp from './TimerComp';
 import CountdownTimer from './components/displaybar/CountdownTimer';
 
 function App() {
+  const [countdownDuration, setCountdownDuration] = useState(0);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    //convert minutes to millsec and update the countdown timestamp
+    const countdownTimestampMs = Date.now() + countdownDuration * 60 * 1000;
+    setCountdownDuration(0);
+    setCountdownTimestamp(countdownTimestampMs);
+  };
+
+  const [countdownTimestamp, setCountdownTimestamp] = useState(
+    Date.now() + 1680000 // initial countdown duration: 28 minutes
+  );
+
   return (
     <>
       <div className="App">
         {/* --------------------------- */}
         <header className="App-header">
-          {/* .............ff happy hacking ff............... */}
-          <CountdownTimer CountdownTimestampMs={1698186888466 + 1200000} />
+          <form onSubmit={handleSubmit}>
+            <label>
+              Set Countdown (minutes):
+              <input
+                type="number"
+                value={countdownDuration}
+                onChange={(e) => setCountdownDuration(parseInt(e.target.value))}
+              />
+            </label>
+            <button type="submit">Start CountDown</button>
+          </form>
+
+          <CountdownTimer CountdownTimestampMs={countdownTimestamp} />
           {/* current time (timestamp in millisecond)*/}
 
           {/* .............bottom............... */}
