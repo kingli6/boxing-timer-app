@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './CountdownTimer.css';
 import { getRemainingTimeUntilMsTimestamp } from './Utils/CountdownTimerUtils.jsx';
+
 const defaultRemaingTime = {
   seconds: '00',
   minutes: '00',
@@ -16,6 +17,7 @@ const CountdownTimer = ({ CountdownTimestampMs }) => {
     const intervalID = setInterval(() => {
       updateRemainingTime(CountdownTimestampMs);
     }, 1000); // Update every 1000 milli second (1 sec)
+
     return () => clearInterval(intervalID); // Cleanup when the component unmounts
   }, [CountdownTimestampMs]);
 
